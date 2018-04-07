@@ -14,4 +14,4 @@ eureka:
   instance:
     hostname: localhost
     
-message: Producer configuration server is alive2!
+message: Producer configuration server is alive3!
