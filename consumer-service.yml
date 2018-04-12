@@ -1,4 +1,5 @@
 spring:
+  profiles: cloud
   application:
     name: consumer-service
 
@@ -22,4 +23,26 @@ hystrix:
           thread:
             timeoutInMilliseconds: 60000
 
+---
+spring:
+  profiles: docker
+  application:
+    name: consumer-service
 
+server:
+  port: 0
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://lk-eureka:8761/eureka/
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
